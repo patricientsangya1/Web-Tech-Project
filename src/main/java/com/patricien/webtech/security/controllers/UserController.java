@@ -36,6 +36,16 @@ public class UserController {
         model.addAttribute("userNotRoles", roleService.getUserNotRoles(user));
         return "/security/user" + op; //returns employeeEdit or employeeDetails
     }
+    
+  //Added
+//    @GetMapping("/security/user/Edit/{id}")
+//    public String editUser(@PathVariable Integer id, Model model){
+//        User user = userService.findById(id);
+//        model.addAttribute("user", user);
+//        model.addAttribute("userRoles", roleService.getUserRoles(user));
+//        model.addAttribute("userNotRoles", roleService.getUserNotRoles(user));
+//        return "/userEdit";
+//    }
 
     @PostMapping("/users/addNew")
     public RedirectView addNew(User user, RedirectAttributes redir) {
